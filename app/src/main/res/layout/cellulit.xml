@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cellulit"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_cellulit_oedeme"
+            android:layout_width="650dp"
+            android:layout_height="98dp"
+            android:alpha="0"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/btn_cellulit_back"
+            android:layout_width="150dp"
+            android:layout_height="98dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btn_cellulit_oedeme"
+            android:text="Button" 
+            android:alpha="0"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_cellulit_soft"
+        android:layout_width="650dp"
+        android:layout_height="98dp"
+        android:alpha="0"
+        android:text="Button" />
+    <Button
+        android:id="@+id/btn_null"
+        android:layout_width="650dp"
+        android:layout_height="98dp"
+        android:alpha="0"
+        android:text="Button" />
+    <Button
+        android:id="@+id/btn_cellulit_tonic"
+        android:layout_width="650dp"
+        android:layout_height="98dp"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_cellulit_double"
+        android:layout_width="650dp"
+        android:layout_height="98dp"
+        android:alpha="0"
+        android:text="Button" />
+
+
+</LinearLayout>

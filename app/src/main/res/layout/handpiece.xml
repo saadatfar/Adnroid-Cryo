@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/handpiece"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_vaccum"
+        android:layout_width="650dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="86dp"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_rplate"
+        android:layout_width="650dp"
+        android:layout_height="86dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btn_vaccum"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_lplate"
+        android:layout_width="650dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btn_rplate"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_handpiece_back"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_vaccum_hidden"
+        android:layout_width="100dp"
+        android:layout_height="92dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/btn_vaccum"
+        android:layout_marginLeft="117dp"
+        android:visibility="invisible"
+        android:background="@drawable/btnback" />
+
+    <Button
+        android:id="@+id/btn_rplate_hidden"
+        android:layout_width="90dp"
+        android:layout_height="92dp"
+        android:layout_alignBaseline="@+id/btn_rplate"
+        android:layout_alignBottom="@+id/btn_rplate"
+        android:layout_alignLeft="@+id/btn_vaccum_hidden"
+        android:visibility="invisible"
+        android:background="@drawable/btnback" />
+
+    <Button
+        android:id="@+id/btn_lplate_hidden"
+        android:layout_width="90dp"
+        android:layout_height="92dp"
+        android:layout_alignBottom="@+id/btn_lplate"
+        android:layout_alignLeft="@+id/btn_vaccum_hidden"
+        android:visibility="invisible"
+        android:background="@drawable/btnback" />
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lpgmain"
+    android:orientation="vertical" >
+
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+	    <Button
+	        android:id="@+id/btn_sport"
+	        android:layout_width="650dp"
+	        android:layout_height="96dp"
+	        android:alpha="0"
+	        android:text="Button" />
+        <Button
+            android:id="@+id/btn_lpg_back"
+            android:layout_width="200dp"
+            android:layout_height="96dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btn_sport"
+            android:text="Button" 
+            android:alpha="0"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_lifting"
+        android:layout_width="650dp"
+        android:layout_height="96dp"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_cellulit"
+        android:layout_width="650dp"
+        android:layout_height="96dp"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_relaxation"
+        android:layout_width="650dp"
+        android:layout_height="96dp"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_recurfacing"
+        android:layout_width="650dp"
+        android:layout_height="96dp"
+        android:alpha="0"
+        android:text="Button" />
+
+</LinearLayout>

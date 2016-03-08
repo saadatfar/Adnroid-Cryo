@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cryo"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/NoTitle">
+        <activity android:name="main.activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="main.activity.ManualSettingsActivity"></activity>
+        <activity android:name="main.activity.SelectAuto"></activity>
+        <activity android:name="main.activity.SelectSex" />
+        <activity android:name="main.activity.ManSettings" />
+        <activity android:name="main.activity.WomanSettings" />
+        <activity android:name="main.activity.StartActivity" />
+        <activity android:name="main.activity.StopActivity" />
+        <activity android:name="main.activity.ShowLogCat" />
+        <activity android:name="main.activity.lpg.Cellulit" />
+        <activity android:name="main.activity.lpg.Lifting" />
+        <activity android:name="main.activity.lpg.LPGMain" />
+        <activity android:name="main.activity.lpg.Resurfacing" />
+        <activity android:name="main.activity.lpg.Sport" />
+        <activity android:name="main.activity.lpg.StartLPG" />
+        <activity android:name="main.activity.lpg.StopLPG" />
+        <activity android:name="main.activity.ShowAllTemps" />
+        <activity android:name="main.activity.SelectHandpieceActivity"></activity>
+    </application>
+
+</manifest>
