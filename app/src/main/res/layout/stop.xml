@@ -32,34 +32,29 @@
         android:id="@+id/txt_temp1_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/txt_time_stop"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="96dp"
+        android:layout_marginLeft="87dp"
         android:text="-20\u00b0"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        android:layout_above="@+id/txt_time_stop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="87dp"
+        android:textSize="18dp"
+        android:longClickable="false" />
 
     <TextView
         android:id="@+id/txt_temp3_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/txt_time_stop"
-        android:layout_alignRight="@+id/btn_stop"
-        android:layout_marginRight="142dp"
         android:text="-20\u00b0"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#fff" />
-
-    <TextView
-        android:id="@+id/txt_press_stop1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txt_press_stop2"
-        android:layout_alignTop="@+id/btn_stop"
-        android:layout_marginTop="108dp"
-        android:text="75%"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        android:layout_alignBaseline="@+id/txt_temp1_stop"
+        android:layout_alignBottom="@+id/txt_temp1_stop"
+        android:layout_alignRight="@+id/btn_stop"
+        android:textSize="18dp"
+        android:layout_alignEnd="@+id/btn_stop" />
 
     <TextView
         android:id="@+id/txt_press_stop2"
@@ -71,5 +66,19 @@
         android:text="75%"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/txt_temp2_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-20\u00b0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff"
+        android:layout_marginRight="156dp"
+        android:layout_marginEnd="156dp"
+        android:textSize="18dp"
+        android:layout_below="@+id/btn_stop"
+        android:layout_toLeftOf="@+id/txt_temp3_stop"
+        android:layout_toStartOf="@+id/txt_temp3_stop" />
 
 </RelativeLayout>

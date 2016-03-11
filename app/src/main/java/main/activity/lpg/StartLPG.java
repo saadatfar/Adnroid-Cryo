@@ -7,6 +7,7 @@ package main.activity.lpg;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -50,7 +51,8 @@ public class StartLPG extends Activity implements OnClickListener {
 				//starting corresponding intents
 				if (arg0.getId()==R.id.btn_startlpg){
 					StopLPG.time=time;
-					DataProvider.setLpgFrqns((char) Math.round(period * 10));
+					Log.e("TIRAX", "LPG FREQUENCES" + (char) Math.round(period * 100)+"  "+period);
+					DataProvider.setLpgFrqns((char) Math.round(period * 100));
 					DataProvider.setLpg();
 					DataProvider.deviceOn();
 					startActivity(int_stop);

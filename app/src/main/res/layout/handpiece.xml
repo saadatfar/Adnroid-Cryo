@@ -23,7 +23,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/btn_vaccum"
         android:alpha="0"
-        android:text="Button" />
+        android:text="btn_next_handpiece" />
 
     <Button
         android:id="@+id/btn_lplate"
@@ -71,5 +71,18 @@
         android:layout_alignLeft="@+id/btn_vaccum_hidden"
         android:visibility="invisible"
         android:background="@drawable/btnback" />
+
+    <Button
+        android:id="@+id/btn_next_hand"
+        android:layout_width="100dp"
+        android:layout_height="92dp"
+        android:alpha="0"
+        android:background="@drawable/btnback"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/btn_handpiece_back"
+        android:layout_alignEnd="@+id/btn_handpiece_back"
+        android:layout_toRightOf="@+id/btn_lplate"
+        android:layout_toEndOf="@+id/btn_lplate"
+        android:layout_below="@+id/btn_lplate" />
 
 </RelativeLayout>

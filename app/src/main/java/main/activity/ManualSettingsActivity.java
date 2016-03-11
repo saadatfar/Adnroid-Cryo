@@ -188,7 +188,7 @@ public class ManualSettingsActivity extends Activity implements OnClickListener 
 	}
 	@Override
 	public void onClick(View arg0) {
-		Intent int_next = new Intent(ManualSettingsActivity.this,StartActivity.class);
+		Intent int_next = new Intent(ManualSettingsActivity.this,SelectHandpieceActivity.class);
 		
 		if (arg0.getId()==R.id.btn_back_manual){
 			this.finish();

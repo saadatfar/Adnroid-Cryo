@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.Tirax.cryo.DataProvider;
-import com.Tirax.cryo.TextFont;
 import com.example.cryo.*;
 
 public class StopActivity extends Activity implements OnClickListener {
@@ -36,7 +35,6 @@ public class StopActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//ToDO updata layout page
 		setContentView(R.layout.stop);
 		initialTextViews();
 		finished=false;
@@ -56,11 +54,11 @@ public class StopActivity extends Activity implements OnClickListener {
 
 	private void initialTextViews() {
 		//read temp datas and show
-		pres1 = (TextView) findViewById(R.id.txt_press_stop1);
+		pres1 = (TextView) findViewById(R.id.txt_press_stop2);
 		timetext = (TextView) findViewById(R.id.txt_time_stop);
 		tempL = (TextView) findViewById(R.id.txt_temp1_stop);
 		tempR = (TextView) findViewById(R.id.txt_temp3_stop);
-		//TODO tempVaccum = (TextView) findViewById(R.id.txt)
+		tempVaccum = (TextView) findViewById(R.id.txt_temp2_stop);
 	}
 
 
@@ -115,9 +113,9 @@ public class StopActivity extends Activity implements OnClickListener {
 		@Override
 		public void run() {
 			pres1.setText(DataProvider.getPresure()*25+"%");
-			tempR.setText(DataProvider.getTemp(DataProvider.RIGHT_TEMP));
-			tempL.setText(DataProvider.getTemp(DataProvider.LEFT_TEMP));
-			tempVaccum.setText(DataProvider.getTemp(DataProvider.VACCUM_TEMP));
+			tempR.setText(DataProvider.getTemp(DataProvider.RIGHT_TEMP)+"°");
+			tempL.setText(DataProvider.getTemp(DataProvider.LEFT_TEMP)+"\u00b0");
+			tempVaccum.setText(DataProvider.getTemp(DataProvider.VACCUM_TEMP)+"\u00b0");
 			if(!finished)
 				UIHandler.postDelayed(UIreportsRunnable, 300);
 		}

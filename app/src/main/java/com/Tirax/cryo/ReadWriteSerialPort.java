@@ -30,12 +30,14 @@ public class ReadWriteSerialPort extends AsyncTask<Void, Void, Void>{
 	
 	private static int resendTimer = 0;
 	private Handler ResendRunnableHandler=new Handler();
-	
+
+	//TODO remov and use better idea
+	public final static char regMachineState = 15;
 	@Override
 	protected Void doInBackground(Void... voids) {
 		initialRegisters();
 		ResendRunnableHandler.postDelayed(ResendRunnable, 0);
-		setRegister((char)2,(char)10);
+		//setRegister((char)2,(char)10);
 		while(true){
 			readSerialPort();
 			if(reset())
@@ -44,19 +46,26 @@ public class ReadWriteSerialPort extends AsyncTask<Void, Void, Void>{
 		
 	}
 	private void senAllRegisters() {
-		for(int i=0;i<REGISTERS_NUMBER;i++)
-			addToChangedRegisters((char)i);
+		Log.e("TIRAX", "******************************reset micro***********************************");
+		offReset();
+		for(int i=0;i<REGISTERS_NUMBER;i++) {
+			addToChangedRegisters((char) i);
+		}
+
 	}
 	protected boolean reset() {
 		return false;
 	}
+	protected void offReset(){}
+	protected void onReset(){}
 	private void initialRegisters() {
 		registers = new ArrayList<Character>(REGISTERS_NUMBER);
 		for(int i=0;i<REGISTERS_NUMBER;i++){
 			registers.add((char) 0);
-		}	
+		}
+		senAllRegisters();
 	}
-	private void readSerialPort(){
+	protected void readSerialPort(){
 		if(SerialPort.isData()){
 			char c= SerialPort.read();	
 			if(c==WRITE_STARTBIT){
@@ -66,21 +75,29 @@ public class ReadWriteSerialPort extends AsyncTask<Void, Void, Void>{
 				writeReg = c;
 				writeState = WAIT_VALUE;
 			}else if(writeState==WAIT_VALUE){
-				registers.set(writeReg, c);
-				//TODO Remove
-				logRegisters();
+				if(writeReg==regMachineState && c==(char)32)//TODO remove and better idea
+					onReset();
+				else
+					if(writeReg<REGISTERS_NUMBER)
+						registers.set(writeReg, c);
+					else{
+						writeState = WAIT_START;
+						Log.e("TIRAX Error","Reisters Out of bound exception.");
+					}
 				sendAck(calcAckCode(writeReg, c));
+				writeState = WAIT_START;
 			}			
 			if(c==ACK_STARTBIT){
 				ackState = START_RECIEVED;
 				writeState = WAIT_START;
-				Log.e("TIRAx","Ack start recieved");
 			}else if(ackState == START_RECIEVED){
 				if(waited_ack == c){
 					changedRegisters.remove(0);
 					resendTimer=0;
 					Log.e("TIRAx","Ack recieved");
 					sendRegister();
+					ackState = WAIT_START;
+					waited_ack=0;
 				}
 			}
 		}
@@ -104,8 +121,10 @@ public class ReadWriteSerialPort extends AsyncTask<Void, Void, Void>{
 	}
 	
 	public static void setRegister(char number, char value){
-		registers.set(number, value);
-		addToChangedRegisters(number);  
+		if(number<REGISTERS_NUMBER) {
+			registers.set(number, value);
+			addToChangedRegisters(number);
+		}
 	}
 	
 	private static void addToChangedRegisters(char number) {
@@ -123,14 +142,24 @@ public class ReadWriteSerialPort extends AsyncTask<Void, Void, Void>{
 	}
 	
 	public static void setBit(char number,char p, boolean v){
+		if(number<REGISTERS_NUMBER) {
+			if (v) {
+				registers.set(number, (char) (registers.get(number) | 1 << p));
+			} else {
+				registers.set(number, (char) (registers.get(number) & (~(1 << p))));
+			}
+			addToChangedRegisters(number);
+		}
+	}
+
+	public static void setBitNoSend(char number,char p, boolean v){
 		if (v){
 			registers.set(number, (char) (registers.get(number) | 1<<p));
 		}else{
 			registers.set(number, (char) (registers.get(number) & (~(1<<p))));
 		}
-		addToChangedRegisters(number);  
 	}
-	
+
 	public static void logRegisters(){
 		for(int i=0;i<REGISTERS_NUMBER;i++)
 			Log.e("TIRAX","Register "+i+" Value "+(int)registers.get(i));
@@ -146,6 +175,7 @@ public class ReadWriteSerialPort extends AsyncTask<Void, Void, Void>{
 			if(resendTimer>0)
 				resendTimer--;
 			ResendRunnableHandler.postDelayed(ResendRunnable, 1);
+
 			
 		}
 	

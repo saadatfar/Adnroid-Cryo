@@ -7,13 +7,13 @@ public class DataProvider extends ReadWriteSerialPort {
 	public final static char regMaxTemp = 12;
 	public final static char regPress = 13;
 	public final static char regLpgFrqns = 14;
-	//bit 7-->on off bit 6-->cryo lpg
+	//bit 7-->on off bit 6-->cryo lpg 5-->reset 4-->r handpiece 3--> l handpiece 2--> vaccum handpiece
 	public final static char regMachineState = 15;
 
 	private static char START_PRESSURE=3;
 	public static final int VACCUM_TEMP=0;
-	public static final int RIGHT_TEMP=4;
-	public static final int LEFT_TEMP=6;
+	public static final int RIGHT_TEMP=2;
+	public static final int LEFT_TEMP=3;
 	//set registers
 	public static void setTemp(int number, char value){
 		setRegister(regTemp[number], value);
@@ -35,8 +35,8 @@ public class DataProvider extends ReadWriteSerialPort {
 	}
 	
 	//get registers
-	public static char getTemp(int number){
-		return getRegister(regTemp[number]);
+	public static int getTemp(int number){
+		return (int)getRegister(regTemp[number])-30;
 	}
 	public static char getTempRefrence(int number){
 		return getRegister(regRefTemp[number]);
@@ -57,6 +57,8 @@ public class DataProvider extends ReadWriteSerialPort {
 	protected boolean reset() {
 		return getBit(regMachineState, (char) 5);
 	}
+	protected void offReset() { setBitNoSend(regMachineState, (char) 5,false);}
+	protected void onReset() { setBitNoSend(regMachineState, (char) 5, true);}
 	public static void setLpg(){
 		setBit(regMachineState, (char) 6,false);
 	}
@@ -64,6 +66,11 @@ public class DataProvider extends ReadWriteSerialPort {
 
 	public static void deviceOff(){setBit(regMachineState, (char) 7,false);}
 	public static void deviceOn(){setBit(regMachineState, (char) 7,true);}
+	public static void setHandpiece(boolean right,boolean left,boolean vaccum){
+		setBit(regMachineState, (char) 4,right);
+		setBit(regMachineState, (char) 3,left);
+		setBit(regMachineState, (char) 2,vaccum);
+	}
 	public static void setStartPresure() {
 		setPresure(START_PRESSURE);
 	}

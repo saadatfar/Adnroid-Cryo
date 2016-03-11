@@ -43,19 +43,19 @@ public class Resurfacing extends Activity implements OnClickListener {
 				//starting corresponding intents
 				if (arg0.getId()==R.id.btn_resurfacing_body){
 					StartLPG.time=25;
-					StartLPG.period = 10000;
+					StartLPG.period = 0;
 					startActivity(int_start);
 				}
 				
 				if (arg0.getId()==R.id.btn_resurfacing_face){
 					StartLPG.time=15;
-					StartLPG.period = 10000;
+					StartLPG.period = 0;
 					startActivity(int_start);
 				}
 
 				if (arg0.getId()==R.id.btn_resurfacing_preorbital){
 					StartLPG.time=1;
-					StartLPG.period = 10000;
+					StartLPG.period = 0;
 					startActivity(int_start);
 				}
 

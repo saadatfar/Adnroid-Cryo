@@ -187,7 +187,7 @@ public class WomanSettings extends Activity implements OnClickListener {
 	}
 	@Override
 	public void onClick(View arg0) {
-		Intent int_next=new Intent(WomanSettings.this,StartActivity.class);
+		Intent int_next=new Intent(WomanSettings.this,SelectHandpieceActivity.class);
 		
 		if (arg0.getId()==R.id.btn_back_women){
 			this.finish();

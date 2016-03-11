@@ -30,7 +30,7 @@ public class SerialPort {
 		try{
 			if(fd>-1){
 				byte bt[]={Tools.charToByte(c)};
-				//Log.e("TIRAX","send byte "+b);
+				Log.e("TIRAX","send byte "+(int)c);
 				HardwareControler.write(fd, bt);
 			}
 		}catch(Exception ex){
@@ -44,7 +44,7 @@ public class SerialPort {
 				byte[] buf=new byte[1];
 				HardwareControler.read(fd, buf, 1);
 				char d=Tools.byteToChar(buf[0]);
-				Log.v("TIRAX","read char "+(int)d);
+				Log.e("TIRAX","read char "+(int)d);
 				return d;
 			}
 			else
