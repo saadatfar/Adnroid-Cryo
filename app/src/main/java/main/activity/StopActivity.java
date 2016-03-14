@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.Tirax.cryo.DataProvider;
+import com.Tirax.cryo.SharedPrefrences;
 import com.example.cryo.*;
 
 public class StopActivity extends Activity implements OnClickListener {
@@ -30,7 +31,7 @@ public class StopActivity extends Activity implements OnClickListener {
 	private TextView pres1;
 	private TextView timetext;
 	private int backpressed;
-	public static boolean finished=true;
+	public boolean finished=true;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -97,11 +98,13 @@ public class StopActivity extends Activity implements OnClickListener {
 
         @Override
         public void run() {
-        	
+        	Log.e("TIRAX","*******TImer time"+time);
         	if(time==0){
         		finishedCryo();
         		return;
         	}
+			SharedPrefrences.setTime(StopActivity.time);
+			timetext = (TextView) findViewById(R.id.txt_time_stop);
         	timetext.setText(time+"'");
         	time--;
         	if(!finished)

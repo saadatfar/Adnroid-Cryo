@@ -7,6 +7,16 @@
     android:orientation="vertical" >
 
     <Button
+        android:id="@+id/btn_vaccum_hidden"
+        android:layout_width="100dp"
+        android:layout_height="92dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/btn_vaccum"
+        android:layout_marginLeft="117dp"
+        android:visibility="invisible"
+        android:background="@drawable/btnback" />
+
+    <Button
         android:id="@+id/btn_vaccum"
         android:layout_width="650dp"
         android:layout_height="96dp"
@@ -17,6 +27,16 @@
         android:text="Button" />
 
     <Button
+        android:id="@+id/btn_rplate_hidden"
+        android:layout_width="90dp"
+        android:layout_height="92dp"
+        android:layout_alignBaseline="@+id/btn_rplate"
+        android:layout_alignBottom="@+id/btn_rplate"
+        android:layout_alignLeft="@+id/btn_vaccum_hidden"
+        android:visibility="invisible"
+        android:background="@drawable/btnback" />
+
+    <Button
         android:id="@+id/btn_rplate"
         android:layout_width="650dp"
         android:layout_height="86dp"
@@ -24,6 +44,15 @@
         android:layout_below="@+id/btn_vaccum"
         android:alpha="0"
         android:text="btn_next_handpiece" />
+
+    <Button
+        android:id="@+id/btn_lplate_hidden"
+        android:layout_width="90dp"
+        android:layout_height="92dp"
+        android:layout_alignBottom="@+id/btn_lplate"
+        android:layout_alignLeft="@+id/btn_vaccum_hidden"
+        android:visibility="invisible"
+        android:background="@drawable/btnback" />
 
     <Button
         android:id="@+id/btn_lplate"
@@ -42,35 +71,6 @@
         android:layout_alignParentTop="true"
         android:alpha="0"
         android:text="Button" />
-
-    <Button
-        android:id="@+id/btn_vaccum_hidden"
-        android:layout_width="100dp"
-        android:layout_height="92dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/btn_vaccum"
-        android:layout_marginLeft="117dp"
-        android:visibility="invisible"
-        android:background="@drawable/btnback" />
-
-    <Button
-        android:id="@+id/btn_rplate_hidden"
-        android:layout_width="90dp"
-        android:layout_height="92dp"
-        android:layout_alignBaseline="@+id/btn_rplate"
-        android:layout_alignBottom="@+id/btn_rplate"
-        android:layout_alignLeft="@+id/btn_vaccum_hidden"
-        android:visibility="invisible"
-        android:background="@drawable/btnback" />
-
-    <Button
-        android:id="@+id/btn_lplate_hidden"
-        android:layout_width="90dp"
-        android:layout_height="92dp"
-        android:layout_alignBottom="@+id/btn_lplate"
-        android:layout_alignLeft="@+id/btn_vaccum_hidden"
-        android:visibility="invisible"
-        android:background="@drawable/btnback" />
 
     <Button
         android:id="@+id/btn_next_hand"

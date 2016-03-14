@@ -47,13 +47,13 @@ public class StartActivity extends Activity implements OnClickListener {
 	public void onClick(View arg0) {
 
 		
-				//declaring intents
-				Intent int_stop=new Intent(StartActivity.this,StopActivity.class);
 
 				//starting corresponding intents
 				if (arg0.getId()==R.id.btn_start){
 					StopActivity.time = time;
 					sendStartCommunicationData();
+					//declaring intents
+					Intent int_stop=new Intent(StartActivity.this,StopActivity.class);
 					startActivity(int_stop);
 					this.finish();
 				}
@@ -67,15 +67,16 @@ public class StartActivity extends Activity implements OnClickListener {
 	
 	public void sendStartCommunicationData(){
 				try{
-					Log.e("TIRAX","*******************I Want to Start Cryo**************************");
+
 					DataProvider.setStartPresure();
-//					DataProvider.setTempRefrence(0, (char) 17);
-//					DataProvider.setTempRefrence(1,(char)17);
-//					DataProvider.setTempRefrence(2,(char)17);
-//					DataProvider.setTempRefrence(3,(char)17);
-//					DataProvider.setMaxTemp((char)80);
+					DataProvider.setTempRefrence(0, (char) 17);
+					DataProvider.setTempRefrence(1,(char)17);
+					DataProvider.setTempRefrence(2,(char)17);
+					DataProvider.setTempRefrence(3,(char)17);
+					DataProvider.setMaxTemp((char) 80);
 					DataProvider.setCryo();
 					DataProvider.deviceOn();
+					Log.e("TIRAX", "*******************I Want to Start Cryo**************************");
 
 				}
 				catch(Exception ex){

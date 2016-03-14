@@ -49,7 +49,7 @@ public class SelectAuto extends Activity implements OnClickListener {
 					startActivity(int_manual);
 				}
 				if (arg0.getId()==R.id.btn_back_auto_manual){
-					MainActivity.finished=false;
+
 					this.finish();
 				}
 				

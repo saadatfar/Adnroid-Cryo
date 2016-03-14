@@ -13,34 +13,30 @@ import android.util.Log;
 
 public class ResetTask{
 	
-	public Activity mainActivity;
-	public ResetTask(Activity n) {
-		mainActivity =n;
-	}
-	public void run() {
-			if(MainActivity.rst){
-				resetSystem();
-			}
-		
-	}
 
-	public void resetSystem() {
+	public static Activity mainActivity;
+
+
+	public static void resetSystem() {
 		try{
 			Intent mStartActivity = new Intent(mainActivity, MainActivity.class);
-			Log.e("RESET","in reset");
-			StopLPG.finished=true;
-			StopActivity.finished=true; 
+			Log.e("RESET", "in reset");
 			SerialPort.turnOff();
-			android.os.SystemClock.sleep(600);
+
+			SharedPrefrences.setReseted(true);
+			SharedPrefrences.setRegisters(DataProvider.getAllRegisters());
+			android.os.SystemClock.sleep(700);
+
 			int mPendingIntentId = 123456;
 			PendingIntent mPendingIntent = PendingIntent.getActivity(mainActivity, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
 			AlarmManager mgr = (AlarmManager)mainActivity.getSystemService(Context.ALARM_SERVICE);
 			mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
-			MainActivity.rst=false;
+
+			Log.e("TIRAX", "Log set" + SharedPrefrences.getReseted());
 			System.exit(0);
 		}
 		catch(Exception ex){
-			Log.e("IAM HERE","i am here now");
+			Log.e("TIRAX ERROR","i want reset");
 		}
 
 		

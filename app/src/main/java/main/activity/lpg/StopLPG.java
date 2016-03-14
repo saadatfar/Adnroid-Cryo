@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.Tirax.cryo.DataProvider;
+import com.Tirax.cryo.SharedPrefrences;
 import com.Tirax.cryo.TextFont;
 import com.example.cryo.*;
 
@@ -22,7 +23,7 @@ public class StopLPG extends Activity implements OnClickListener {
 	
 	public static int time;
 	TextView time_text;
-	public static boolean finished=true;
+	public boolean finished=true;
 	
 	private Handler timerHandler=new Handler();
 	@Override
@@ -85,6 +86,7 @@ public class StopLPG extends Activity implements OnClickListener {
         		finishedLPG();
         		return;
         	}
+			SharedPrefrences.setTime(StopLPG.time);
         	time_text.setText(time+"'");
         	time--;
         	if(!finished)

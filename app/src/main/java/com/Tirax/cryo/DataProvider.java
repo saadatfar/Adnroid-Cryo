@@ -53,7 +53,16 @@ public class DataProvider extends ReadWriteSerialPort {
 	public static char getMachineState(){
 		return getRegister(regMachineState);
 	}
-	
+
+	public static boolean isDeviceOn() {
+		return getBit(regMachineState, (char) 7);
+	}
+
+	public static boolean getCryo() {
+		return getBit(regMachineState, (char) 6);
+	}
+
+
 	protected boolean reset() {
 		return getBit(regMachineState, (char) 5);
 	}
@@ -67,8 +76,8 @@ public class DataProvider extends ReadWriteSerialPort {
 	public static void deviceOff(){setBit(regMachineState, (char) 7,false);}
 	public static void deviceOn(){setBit(regMachineState, (char) 7,true);}
 	public static void setHandpiece(boolean right,boolean left,boolean vaccum){
-		setBit(regMachineState, (char) 4,right);
-		setBit(regMachineState, (char) 3,left);
+		setBitNoSend(regMachineState, (char) 4, right);
+		setBitNoSend(regMachineState, (char) 3, left);
 		setBit(regMachineState, (char) 2,vaccum);
 	}
 	public static void setStartPresure() {

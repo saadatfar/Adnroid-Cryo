@@ -78,7 +78,7 @@ public class SelectHandpieceActivity extends Activity implements View.OnClickLis
         }
         if (arg0.getId()==R.id.btn_next_hand){
             if(right | left | vaccum){
-                Log.e("TIRAX","*******************I Want to Select Handpiece Cryo**************************");
+                Log.e("TIRAX","*****handpiece righ:"+right+" handpiece left"+left+" handpiece vaccum"+vaccum);
                 DataProvider.setHandpiece(right,left,vaccum);
                 startActivity(int_start);
             }

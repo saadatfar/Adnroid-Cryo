@@ -2,6 +2,8 @@ package main.activity;
 
 
 import main.activity.lpg.LPGMain;
+import main.activity.lpg.StopLPG;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,34 +16,67 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.Tirax.cryo.DataProvider;
+import com.Tirax.cryo.ResetTask;
 import com.Tirax.cryo.SerialPort;
+import com.Tirax.cryo.SharedPrefrences;
 import com.example.cryo.R;
 
 public class MainActivity  extends Activity implements OnClickListener{
 
 	 
 	 int backpressed=0;
-	 public static boolean finished=false;// if you dont need delete
-	 public static boolean rst=false;// if you dont need delete
 	 
 	 
 	 
 		@SuppressLint("NewApi")
 		protected void onCreate(Bundle savedInstanceState) {
-			Log.e("TIRAX CRYO","start create main activity");
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.main_page);
-			
-			//killUI();
-			assignKeys();
-     
-        	SerialPort.turnOn();   	
-        	new DataProvider().execute();
-
-        	finished=false;			
 		}
 
-		private void assignKeys() {
+	 @Override
+	 protected void onResume(){
+		 super.onResume();
+
+		 try {
+			 killUI();
+			 assignKeys();
+
+			 //set initial activity
+			 ResetTask.mainActivity = this;
+			 SharedPrefrences.mainActivity =this;
+
+			 Log.e("TIRAX", "Log set" + SharedPrefrences.getReseted());
+			 //run serial port
+			 SerialPort.turnOn();
+			 new DataProvider().execute();
+
+			 goToCorrectPage();
+
+		 }catch(Exception ex){
+			 Log.e("TIRAX ERROR","error accured"+ex);
+		 }
+	 }
+
+	private void goToCorrectPage() {
+		android.os.SystemClock.sleep(100);
+
+		if(DataProvider.isDeviceOn()) {
+			if(DataProvider.getCryo()) {
+				StopActivity.time = SharedPrefrences.getTime();
+				Intent int_auto = new Intent(MainActivity.this, StopActivity.class);
+				startActivity(int_auto);
+
+			}else{
+				StopLPG.time = SharedPrefrences.getTime();
+				Intent int_lpg = new Intent(MainActivity.this, StopLPG.class);
+				startActivity(int_lpg);
+
+			}
+		}
+	}
+
+	private void assignKeys() {
 			backpressed=0;
             Button am = (Button) findViewById(R.id.btn_cryo);
             am.setOnClickListener(this);
@@ -96,13 +131,11 @@ public class MainActivity  extends Activity implements OnClickListener{
 			Intent int_auto=new Intent(MainActivity.this,SelectAuto.class);
 			Intent int_lpg=new Intent(MainActivity.this,LPGMain.class);
 			if (arg0.getId()==R.id.btn_cryo){
-				finished=true;
 				startActivity(int_auto);
 				
 			}
 			
 			if (arg0.getId()==R.id.btn_lpg){
-				finished=true;
 				startActivity(int_lpg);
 				
 			}
