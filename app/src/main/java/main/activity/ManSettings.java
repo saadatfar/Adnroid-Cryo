@@ -196,14 +196,6 @@ public class ManSettings extends Activity implements OnClickListener {
 		}
 		if (arg0.getId()==R.id.btn_next_inmen){
 			StartActivity.time=45;
-			char r;
-			if(weightValue>65){
-				r = 17;
-			}else{
-				r = 20;
-			}
-			Byte b =0;
-			DataProvider.setTempRefrence(b, r);
 			startActivity(int_next);
 		}
 				

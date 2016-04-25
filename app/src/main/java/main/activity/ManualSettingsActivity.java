@@ -196,9 +196,11 @@ public class ManualSettingsActivity extends Activity implements OnClickListener 
 		if (arg0.getId()==R.id.btn_next_manual){
 			StartActivity.time = this.timeValue;
 			char r = (char)(this.tempmValue+30);
-			Byte b =0;
-			DataProvider.setTempRefrence(b, r);
-			
+			DataProvider.setTempRefrence(0, r);
+			DataProvider.setTempRefrence(1, r);
+			DataProvider.setTempRefrence(2, r);
+			DataProvider.setTempRefrence(3, r);
+			StartActivity.temp = this.tempmValue;
 			startActivity(int_next);
 		}
 				

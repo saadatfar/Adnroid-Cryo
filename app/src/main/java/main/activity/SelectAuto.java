@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.Tirax.cryo.DataProvider;
 import com.example.cryo.*;
 
 
@@ -42,6 +43,11 @@ public class SelectAuto extends Activity implements OnClickListener {
 
 				//starting corresponding intents
 				if (arg0.getId()==R.id.btn_auto){
+					DataProvider.setTempRefrence(0, (char) 20);
+					DataProvider.setTempRefrence(1,(char)20);
+					DataProvider.setTempRefrence(2,(char)20);
+					DataProvider.setTempRefrence(3,(char)20);
+					StartActivity.temp = -10;
 					startActivity(int_auto);
 				}
 				

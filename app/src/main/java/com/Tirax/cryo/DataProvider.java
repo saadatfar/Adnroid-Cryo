@@ -1,5 +1,7 @@
 package com.Tirax.cryo;
 
+import android.util.Log;
+
 public class DataProvider extends ReadWriteSerialPort {
 	
 	public final static char[] regTemp = {0,1,2,3,4,5,6,7};
@@ -14,12 +16,25 @@ public class DataProvider extends ReadWriteSerialPort {
 	public static final int VACCUM_TEMP=0;
 	public static final int RIGHT_TEMP=2;
 	public static final int LEFT_TEMP=3;
+
+	public static int FINAL_TEMP=-10;
+	public static final int STABILITY_TIME=5;
 	//set registers
 	public static void setTemp(int number, char value){
 		setRegister(regTemp[number], value);
 	}
 	public static void setTempRefrence(int number, char value){
-		setRegister(regRefTemp[number], value);
+		FINAL_TEMP = value-30;
+		//if temp<-5 set temp -1
+		if(value<=25) {
+			setRegister(regRefTemp[number], (char) 29);
+		}
+		else
+			//if temp<0 set temp 1
+			if(value<=30)
+				setRegister(regRefTemp[number], (char)31);
+			else
+				setRegister(regRefTemp[number], value);
 	}
 	public static void setMaxTemp(char value){
 		setRegister(regMaxTemp, value);
@@ -69,7 +84,7 @@ public class DataProvider extends ReadWriteSerialPort {
 	protected void offReset() { setBitNoSend(regMachineState, (char) 5,false);}
 	protected void onReset() { setBitNoSend(regMachineState, (char) 5, true);}
 	public static void setLpg(){
-		setBit(regMachineState, (char) 6,false);
+		setBit(regMachineState, (char) 6, false);
 	}
 	public static void setCryo(){setBit(regMachineState, (char) 6,true);}
 
@@ -82,6 +97,21 @@ public class DataProvider extends ReadWriteSerialPort {
 	}
 	public static void setStartPresure() {
 		setPresure(START_PRESSURE);
+	}
+
+	public static int getDisplayTemp(int number,int time){
+
+		int result = (int)getRegister(regTemp[number])-30;
+		if((number==VACCUM_TEMP &&  getBit(regMachineState,(char)2)) ||
+				(number==LEFT_TEMP &&  getBit(regMachineState,(char)3))||
+				(number==RIGHT_TEMP &&  getBit(regMachineState,(char)4))) {
+			if (time >= STABILITY_TIME)
+				result = FINAL_TEMP;
+			else
+				result = Math.round(result + (FINAL_TEMP - result) * time / STABILITY_TIME);
+		}
+		return result;
+
 	}
 
 

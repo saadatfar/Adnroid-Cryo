@@ -69,11 +69,7 @@ public class StartActivity extends Activity implements OnClickListener {
 				try{
 
 					DataProvider.setStartPresure();
-					DataProvider.setTempRefrence(0, (char) 17);
-					DataProvider.setTempRefrence(1,(char)17);
-					DataProvider.setTempRefrence(2,(char)17);
-					DataProvider.setTempRefrence(3,(char)17);
-					DataProvider.setMaxTemp((char) 80);
+					DataProvider.setMaxTemp((char) 73);
 					DataProvider.setCryo();
 					DataProvider.deviceOn();
 					Log.e("TIRAX", "*******************I Want to Start Cryo**************************");

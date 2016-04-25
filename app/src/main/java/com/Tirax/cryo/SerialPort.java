@@ -44,7 +44,7 @@ public class SerialPort {
 				byte[] buf=new byte[1];
 				HardwareControler.read(fd, buf, 1);
 				char d=Tools.byteToChar(buf[0]);
-				//Log.e("TIRAX","read char "+(int)d);
+				Log.e("TIRAX","read char "+(int)d);
 				return d;
 			}
 			else
