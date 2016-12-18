@@ -1,7 +1,11 @@
 <resources>
 
-    <string name="app_name">Cryo</string>
+    <string name="app_name">RF</string>
 
     <string name="invisible">invisible</string>
+    <string name="title_activity_enter_pass">EnterPassActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_frequency">FrequencyActivity</string>
+    <string name="version">1.0</string>
 
 </resources>

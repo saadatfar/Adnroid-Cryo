@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/contpuls"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_puls"
+        android:layout_width="650dp"
+        android:layout_height="300dp"
+        android:layout_above="@+id/btn_man"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btn_back_body_face"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_cont"
+        android:layout_width="650dp"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/btn_body"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:alpha="0"
+        android:layout_alignBottom="@+id/btn_cont"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_vacuum"
+        android:layout_width="150px"
+        android:layout_height="40px"
+        android:text="frq."
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ab0018"
+        android:textSize="21dp"
+        android:layout_below="@+id/btn_addVacuum"
+        android:layout_alignLeft="@+id/btn_addVacuum"
+        android:layout_alignStart="@+id/btn_addVacuum"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-6dp"
+         />
+
+    <Button
+        android:id="@+id/btn_addVacuum"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:alpha="0"
+        android:text="Button"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="166dp"
+        android:layout_marginStart="166dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btn_addTime"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:alpha="0"
+        android:text="Button"
+        android:layout_above="@+id/txt_time"
+        android:layout_alignLeft="@+id/btn_decVacuum"
+        android:layout_alignStart="@+id/btn_decVacuum"
+        android:layout_below="@+id/btn_back" />
+
+    <ImageView
+        android:layout_width="340dp"
+        android:layout_height="400dp"
+        android:id="@+id/hider"
+
+        android:background="@drawable/hider"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="83dp"
+        android:layout_marginStart="83dp"
+        android:layout_above="@+id/btn_cont" />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_time"
+        android:layout_width="150px"
+        android:layout_height="30px"
+        android:text="TIME"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ab0018"
+        android:textSize="21dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="18dp"
+        android:layout_above="@+id/btn_decTime"
+        android:layout_alignLeft="@+id/btn_decTime"
+        android:layout_alignStart="@+id/btn_decTime" />
+
+    <Button
+        android:id="@+id/btn_decTime"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="18dp"
+        android:alpha="0"
+        android:text="Button"
+        android:layout_above="@+id/btn_next"
+        android:layout_alignLeft="@+id/btn_decVacuum"
+        android:layout_alignStart="@+id/btn_decVacuum" />
+    <Button
+        android:id="@+id/btn_decVacuum"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="168dp"
+        android:alpha="0"
+        android:text="Button"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/btn_addVacuum"
+        android:layout_alignStart="@+id/btn_addVacuum" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/txt_vacuum"
+        android:layout_alignRight="@+id/txt_vacuum"
+        android:layout_alignEnd="@+id/txt_vacuum" />
+
+
+</RelativeLayout>

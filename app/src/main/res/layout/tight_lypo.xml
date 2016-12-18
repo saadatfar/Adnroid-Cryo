@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tightlypo"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_lipo"
+        android:layout_width="750dp"
+        android:layout_height="400dp"
+        android:layout_above="@+id/btn_man"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btn_back_body_face"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_tight"
+        android:layout_width="750dp"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/btn_body"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0" />
+
+</RelativeLayout>

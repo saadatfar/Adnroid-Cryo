@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bmi"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/btn_decHeight"
+        android:layout_alignParentRight="true"
+        android:text="Button"
+        android:alpha="0" />
+
+    <Button
+        android:id="@+id/btn_decWeight"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/btn_addHeight"
+        android:layout_alignRight="@+id/txt_weight"
+        android:layout_below="@+id/txt_weight"
+        android:text="Button"
+        android:alpha="0" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:text="Button" />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_weight"
+        android:layout_width="150px"
+        android:layout_height="40px"
+        android:layout_alignBottom="@+id/btn_back"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="-20dp"
+        android:layout_toLeftOf="@+id/btn_back"
+        android:text="WEIGHT"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ab0018"
+        android:textSize="21dp" />
+
+    <Button
+        android:id="@+id/btn_addWeight"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/txt_weight"
+        android:layout_alignLeft="@+id/btn_decWeight"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_addHeight"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/btn_decHeight"
+        android:layout_alignLeft="@+id/btn_decHeight"
+        android:alpha="0"
+        android:text="Button" />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_height"
+        android:layout_width="150px"
+        android:layout_height="40px"
+        android:layout_alignRight="@+id/txt_weight"
+        android:layout_below="@+id/btn_addHeight"
+        android:layout_marginRight="12dp"
+        android:text="HEIGHT"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ab0018"
+        android:textSize="21dp" />
+
+    <Button
+        android:id="@+id/btn_decHeight"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/txt_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp"
+        android:alpha="0"
+        android:text="Button" />
+
+</RelativeLayout>

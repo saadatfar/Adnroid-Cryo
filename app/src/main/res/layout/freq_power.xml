@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/manualsetting"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_next_manualseting"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/btn_decVacuum"
+        android:layout_alignParentRight="true"
+        android:text="Button"
+        android:alpha="0" />
+
+    <Button
+        android:id="@+id/btn_decPower"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/btn_addVacuum"
+        android:layout_alignRight="@+id/txt_power"
+        android:layout_below="@+id/txt_power"
+        android:text="Button"
+        android:layout_marginTop="20dp"
+        android:alpha="0" />
+
+    <Button
+        android:id="@+id/btn_back_manualseting"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:text="Button" />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_power"
+        android:layout_width="150px"
+        android:layout_height="40px"
+        android:layout_alignBottom="@+id/btn_back_manualseting"
+        android:layout_marginRight="89dp"
+        android:layout_marginBottom="-25dp"
+        android:layout_toLeftOf="@+id/btn_back_manualseting"
+        android:text="POWER"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ab0018"
+        android:textSize="21dp" />
+
+    <Button
+        android:id="@+id/btn_addPower"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/txt_power"
+        android:layout_alignLeft="@+id/btn_decPower"
+        android:alpha="0"
+        android:text="Button" />
+
+    <ImageButton
+        android:id="@+id/btn_addVacuum"
+        android:layout_width="105dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/btn_decVacuum"
+        android:layout_alignLeft="@+id/btn_decVacuum"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="-5dp"
+        android:background="@null"
+        android:text=""
+        />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_vacuum"
+        android:layout_width="150px"
+        android:layout_height="30px"
+        android:layout_marginTop="-33dp"
+        android:layout_alignRight="@+id/txt_power"
+        android:layout_below="@+id/btn_addVacuum"
+        android:layout_marginRight="1dp"
+        android:text="FRQ."
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ab0018"
+        android:textSize="21dp" />
+
+    <ImageButton
+        android:id="@+id/btn_decVacuum"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="-10dp"
+        android:text=""
+        android:background="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/txt_vacuum"
+        android:layout_alignStart="@+id/txt_vacuum" />
+
+    <Button
+        android:id="@+id/btn_addTime"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:alpha="0"
+        android:text="Button"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/btn_decVacuum"
+        android:layout_alignStart="@+id/btn_decVacuum" />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_time"
+        android:layout_width="150px"
+        android:layout_height="30px"
+        android:text="TIME"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ab0018"
+        android:textSize="21dp"
+        android:layout_below="@+id/btn_addTime"
+        android:layout_alignLeft="@+id/txt_power"
+        android:layout_alignStart="@+id/txt_power" />
+
+    <Button
+        android:id="@+id/btn_decTime"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:alpha="0"
+        android:text="Button"
+        android:layout_above="@+id/btn_addPower"
+        android:layout_alignLeft="@+id/btn_addTime"
+        android:layout_alignStart="@+id/btn_addTime" />
+
+</RelativeLayout>

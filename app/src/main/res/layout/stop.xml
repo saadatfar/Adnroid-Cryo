@@ -3,10 +3,10 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/stop"
+    android:background="@drawable/stoprfcryo"
     android:orientation="vertical" >
 
-    <TextView
+    <com.Tirax.RF.TextFont
         android:id="@+id/txt_time_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,69 +16,172 @@
         android:layout_marginRight="50dp"
         android:textColor="#fff"
         android:text="45&apos;"
+        android:textSize="17dp"
+        android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_stop"
-        android:layout_width="450dp"
-        android:layout_height="300dp"
-        android:layout_above="@+id/txt_temp1_stop"
-        android:layout_alignLeft="@+id/txt_temp1_stop"
-        android:layout_marginBottom="76dp"
-        android:alpha="0"
-        android:text="Button" />
+        android:layout_width="550dp"
+        android:layout_height="290dp"
+        android:layout_marginBottom="90dp"
 
-    <TextView
-        android:id="@+id/txt_temp1_stop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="87dp"
-        android:text="-20\u00b0"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#fff"
+        android:text="Button"
         android:layout_above="@+id/txt_time_stop"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="87dp"
-        android:textSize="18dp"
-        android:longClickable="false" />
+        android:background="@drawable/stopbut" />
 
-    <TextView
-        android:id="@+id/txt_temp3_stop"
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_stop_power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-20\u00b0"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#fff"
-        android:layout_alignBaseline="@+id/txt_temp1_stop"
-        android:layout_alignBottom="@+id/txt_temp1_stop"
-        android:layout_alignRight="@+id/btn_stop"
-        android:textSize="18dp"
-        android:layout_alignEnd="@+id/btn_stop" />
-
-    <TextView
-        android:id="@+id/txt_press_stop2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btn_stop"
-        android:layout_alignLeft="@+id/txt_time_stop"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="70dp"
         android:text="75%"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        android:textSize="17dp"
+        android:layout_alignBottom="@+id/btn_stop"
+        android:layout_alignLeft="@+id/txt_time_stop"
+        android:layout_alignStart="@+id/txt_time_stop" />
 
-    <TextView
-        android:id="@+id/txt_temp2_stop"
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_stop_vacuum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-20\u00b0"
+        android:layout_marginBottom="210dp"
+        android:text="75%"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
-        android:layout_marginRight="156dp"
-        android:layout_marginEnd="156dp"
-        android:textSize="18dp"
-        android:layout_below="@+id/btn_stop"
-        android:layout_toLeftOf="@+id/txt_temp3_stop"
-        android:layout_toStartOf="@+id/txt_temp3_stop" />
+        android:textSize="17dp"
+        android:layout_alignBottom="@+id/btn_stop"
+        android:layout_alignLeft="@+id/txt_time_stop"
+        android:layout_alignStart="@+id/txt_time_stop" />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_stop_freq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2000 KHz"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff"
+        android:textSize="17dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginStart="75dp"
+        android:layout_alignBaseline="@+id/txt_stop_monobi"
+        android:layout_alignBottom="@+id/txt_stop_monobi"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_stop_monobi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MONOPOLAR"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff"
+        android:textSize="17dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignBottom="@+id/txt_time_stop"
+        android:layout_alignRight="@+id/btn_stop"
+        android:layout_alignEnd="@+id/btn_stop"
+        android:layout_marginRight="-60dp"/>
+
+    <ImageButton
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/btn_stop_sound"
+        android:background="@drawable/sound"
+        android:layout_above="@+id/btn_stop"
+        android:layout_alignLeft="@+id/txt_stop_power"
+        android:layout_alignStart="@+id/txt_stop_power" />
+
+    <ImageButton
+        android:layout_width="95dp"
+        android:layout_height="60dp"
+        android:id="@+id/btn_stop_powerup"
+        android:background="@drawable/hider"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:alpha="0"
+        android:layout_alignTop="@+id/btn_stop_vacuumdown"
+        android:layout_above="@+id/txt_stop_power"
+        android:layout_alignLeft="@+id/btn_stop_vacuum_active"
+        android:layout_alignStart="@+id/btn_stop_vacuum_active" />
+
+    <ImageButton
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:id="@+id/btn_stop_powerdown"
+        android:layout_marginTop="217dp"
+        android:background="@drawable/hider"
+        android:layout_alignTop="@+id/btn_stop"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:alpha="0"
+        android:layout_alignBottom="@+id/btn_stop"
+        android:layout_alignLeft="@+id/btn_stop_powerup"
+        android:layout_alignStart="@+id/btn_stop_powerup" />
+
+    <ImageButton
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_stop_vacuumdown"
+        android:background="@drawable/hider"
+        android:layout_alignTop="@+id/txt_stop_vacuum"
+        android:layout_alignLeft="@+id/btn_stop_powerup"
+        android:layout_alignStart="@+id/btn_stop_powerup"
+        android:layout_marginTop="18dp"
+        android:alpha="0"/>
+    <ImageButton
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:id="@+id/btn_stop_vacuumup"
+        android:background="@drawable/hider"
+        android:alpha="0"
+        android:layout_alignBottom="@+id/btn_stop_vacuumdown"
+        android:layout_alignTop="@+id/btn_stop_vacuum_active"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/btn_stop_powerdown"
+        android:layout_alignStart="@+id/btn_stop_powerdown" />
+
+    <ImageButton
+        android:layout_width="147dp"
+        android:layout_height="150dp"
+        android:id="@+id/btn_stop_vacuum_active"
+        android:background="@drawable/hider"
+        android:layout_below="@+id/btn_stop_sound"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:id="@+id/btn_summary"
+
+        android:background="@drawable/sumico"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="70dp"
+        android:id="@+id/img_freq_hider"
+        android:visibility="invisible"
+        android:background="@drawable/hider"
+        android:layout_alignBottom="@+id/txt_time_stop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:id="@+id/btn_stop_settings"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/settingsico"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

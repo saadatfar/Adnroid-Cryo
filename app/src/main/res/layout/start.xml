@@ -25,43 +25,84 @@
         android:alpha="0"
         android:text="Button" />
 
-    <TextView
-        android:id="@+id/txt_pressure_start"
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_power_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/btn_start"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="7dp"
         android:layout_marginRight="40dp"
-        android:text="75%"
+        android:text="75 W"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
-        android:textSize="23dp" />
+        android:textSize="17dp" />
 
-    <TextView
+    <com.Tirax.RF.TextFont
         android:id="@+id/txt_time_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
-        android:layout_alignRight="@+id/txt_pressure_start"
+        android:layout_alignRight="@+id/txt_power_start"
         android:text="12&apos;"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
-        android:textSize="23dp" />
+        android:textSize="17dp" />
 
-    <TextView
-        android:id="@+id/txt_temp_start"
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_start_freq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/btn_start"
-        android:layout_marginRight="43dp"
-        android:layout_marginBottom="16dp"
-        android:text="-20\u00b0"
+        android:text="2000 KHz"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
-        android:textSize="24dp" />
+        android:textSize="17dp"
+        android:layout_alignTop="@+id/txt_start_monobi"
+        android:layout_alignLeft="@+id/btn_start"
+       android:layout_marginLeft="20dp"
+        android:layout_alignStart="@+id/btn_start" />
+
+    <com.Tirax.RF.TextFont
+        android:id="@+id/txt_start_monobi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MONOPOLAR"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff"
+        android:textSize="17dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/txt_time_start"
+        android:layout_toLeftOf="@+id/btn_back_start"
+        android:layout_toStartOf="@+id/btn_back_start" />
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="70dp"
+        android:id="@+id/img_freq_hider"
+        android:visibility="invisible"
+        android:background="@drawable/hider"
+        android:layout_alignBottom="@+id/txt_time_start" />
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:id="@+id/btn_start_summary"
+        android:background="@drawable/sumico"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:id="@+id/btn_start_settings"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/settingsico"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

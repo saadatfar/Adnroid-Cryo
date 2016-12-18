@@ -3,8 +3,29 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/manual"
+    android:background="@drawable/monobi"
     android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_monopolar"
+        android:layout_width="750dp"
+        android:layout_height="400dp"
+        android:layout_above="@+id/btn_man"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btn_back_auto"
+        android:alpha="0"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn_bipolar"
+        android:layout_width="750dp"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/btn_woman"
+        android:alpha="0"
+        android:text="Button" />
 
     <Button
         android:id="@+id/btn_back_manual"
@@ -12,77 +33,6 @@
         android:layout_height="200dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="Button"
         android:alpha="0" />
-
-    <Button
-        android:id="@+id/btn_next_manual"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:alpha="0"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/btn_decWeight"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/btn_next_manual"
-        android:layout_alignLeft="@+id/btn_addWeight"
-        android:alpha="0"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/btn_addWeight"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/txt_temp_manual"
-        android:layout_marginRight="114dp"
-        android:layout_toLeftOf="@+id/btn_back_manual"
-        android:alpha="0"
-        android:text="Button" />
-
-    <com.Tirax.cryo.TextFont
-        android:id="@+id/txt_time_manual"
-        android:layout_width="150px"
-        android:layout_height="40px"
-        android:layout_above="@+id/btn_decHeight"
-        android:layout_alignLeft="@+id/btn_decWeight"
-        android:layout_marginLeft="21dp"
-        android:text="TIME"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ab0018"
-        android:textSize="25dp" />
-
-    <Button
-        android:id="@+id/btn_addHeight"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/txt_time_manual"
-        android:layout_alignLeft="@+id/btn_decWeight"
-        android:alpha="0"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/btn_decHeight"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_alignLeft="@+id/btn_addHeight"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:alpha="0"
-        android:text="Button" />
-
-    <com.Tirax.cryo.TextFont
-        android:id="@+id/txt_temp_manual"
-        android:layout_width="150px"
-        android:layout_height="40px"
-        android:layout_above="@+id/btn_decWeight"
-        android:layout_alignLeft="@+id/txt_time_manual"
-        android:text="TEMP."
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ab0018"
-        android:textSize="25dp" />
 
 </RelativeLayout>
