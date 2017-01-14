@@ -8,7 +8,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.Tirax.RF.MyActivity;
@@ -91,7 +90,7 @@ public class PowerTimeActivity extends MyActivity implements OnClickListener {
 								&& powerAutoIncrement) {
 							powerAutoIncrement = false;
 						} else if (event.getAction() == MotionEvent.ACTION_DOWN)
-							incrementTime();
+							incrementPower();
 						return false;
 					}
 
@@ -140,7 +139,7 @@ public class PowerTimeActivity extends MyActivity implements OnClickListener {
 								&& powerAutoDecrement) {
 							powerAutoDecrement = false;
 						} else if (event.getAction() == MotionEvent.ACTION_DOWN)
-							decrementTime();
+							decrementPower();
 						return false;
 					}
 
@@ -166,14 +165,14 @@ public class PowerTimeActivity extends MyActivity implements OnClickListener {
 	    timeText.setText("" + timeValue);
 	}
 	
-	public void decrementTime(){
+	public void decrementPower(){
 		powerValue -=50;
-		if(powerValue <0)
-			powerValue =0;
+		if(powerValue <=  0)
+			powerValue +=50;
 		powerText.setText("" + powerValue);
 	    
 	}
-	public void incrementTime(){
+	public void incrementPower(){
 		powerValue +=50;
 		if(powerValue >100)
 			powerValue =100;
@@ -204,10 +203,10 @@ public class PowerTimeActivity extends MyActivity implements OnClickListener {
 		public void run() {
 	        if(powerAutoIncrement){
 	        	
-	            incrementTime();
+	            incrementPower();
 	            repeatUpdateHandler.postDelayed( new RptTimeUpdater(), REP_DELAY );
 	        } else if(powerAutoDecrement){
-	            decrementTime();
+	            decrementPower();
 	            repeatUpdateHandler.postDelayed( new RptTimeUpdater(), REP_DELAY );
 	        }
 	    }

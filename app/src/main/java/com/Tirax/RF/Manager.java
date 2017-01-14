@@ -177,11 +177,13 @@ public class Manager {
 
 
         } else {
+
             if (Pages.auto_type == Pages.TIGHTENING) {
                 if (Pages.part_of_body == BodyPart.FACE) {
                     if (Pages.woman_man == Pages.MAN) {
 
                         return new AutoTighteningManFaceOption();
+
 
                     } else {
 

@@ -14,10 +14,11 @@ public class CavitationOption extends Mode {
 
         super();
         if(Pages.auto_manual == Pages.AUTO){
-            power = 100;
+            power = 50;
             handpieceImg =0;
 
         }
+        isPulse = false;
         monobi = "Cavitation";
         type = Types.CAVITATION;
     }

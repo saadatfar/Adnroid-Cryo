@@ -1,7 +1,5 @@
 package com.Tirax.RF;
 
-import android.animation.ValueAnimator;
-import android.graphics.pdf.PdfDocument;
 import android.util.Log;
 
 import com.Tirax.RF.Enums.Types;
@@ -22,7 +20,7 @@ public class Mode {
     public String monobi;
     public int time=45;
     public boolean autoPedal;
-    public boolean continuePulse;
+    public boolean isPulse;
     public int vacuumLevel=0;
     public Mode secondMode=null;
     public int handpieceImg;
@@ -35,10 +33,11 @@ public class Mode {
         type=Values.type;
         monobi = getMonoBi();
         time=Values.time;
-        autoPedal=Values.continuePulse;
-        continuePulse= Values.autoPedal;
+        autoPedal= Values.autoPedal;
+        isPulse = Values.isPulse;
         vacuumLevel = Values.vacuumLevel;
         handpieceImg = getImage();
+        Log.e("TIRAX6","Dad Constructor");
     }
 
     private int getImage() {

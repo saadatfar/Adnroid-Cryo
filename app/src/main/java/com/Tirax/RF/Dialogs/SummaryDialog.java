@@ -3,6 +3,7 @@ package com.Tirax.RF.Dialogs;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.Tirax.RF.Enums.Types;
 import com.Tirax.RF.Enums.VersionTypes;
+import com.Tirax.RF.Manager;
 import com.Tirax.RF.Mode;
 import com.Tirax.RF.SerialPortsHardware.DataProvider;
 import com.Tirax.RF.Storage.Pages;
@@ -33,7 +35,9 @@ public class SummaryDialog extends Dialog implements
         super(a);
 
         this.c = a;
-        mode =  m;
+        mode = m;
+
+
     }
 
     @Override
@@ -94,7 +98,7 @@ public class SummaryDialog extends Dialog implements
         }
 
         TextView pulse = (TextView) findViewById(R.id.txt_summery_pulse);
-        if(mode.pulseFrq == 0)
+        if(!mode.isPulse)
         {
             pulse.setText("Continuous");
         }

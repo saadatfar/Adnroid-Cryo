@@ -2,6 +2,7 @@ package com.Tirax.RF;
 
 import android.util.Log;
 
+import com.Tirax.RF.Enums.Types;
 import com.Tirax.RF.SerialPortsHardware.DataProvider;
 
 /**
@@ -12,7 +13,10 @@ public class Compiler {
     public static void setRegisters(Mode mode){
 
 
-        DataProvider.setRegister(DataProvider.RPWR, (char) mode.power);
+        if(mode.type ==  Types.LF && mode.monobi.equals("BLF"))
+            DataProvider.setRegister(DataProvider.RPWR, (char) (mode.power*0.4));
+        else
+            DataProvider.setRegister(DataProvider.RPWR, (char) mode.power);
 
         DataProvider.setRegister(DataProvider.RFRQ, (char) (mode.frequency / 100));
 
@@ -20,7 +24,7 @@ public class Compiler {
 
         DataProvider.setRegister(DataProvider.RPLEN, (char) (mode.pulseLength / 10));
 
-        DataProvider.setRegister(DataProvider.RTYP1, getType1(mode.continuePulse, mode.autoPedal));
+        DataProvider.setRegister(DataProvider.RTYP1, getType1(mode.isPulse, mode.autoPedal));
 
         DataProvider.setRegister(DataProvider.RTYP0, getType0((char) mode.type.getValue()));
 
@@ -29,7 +33,7 @@ public class Compiler {
             Log.e("TIRAXREG", "RFRQ" + (mode.frequency / 100));
             Log.e("TIRAXREG", "RPFRQ" + mode.pulseFrq);
             Log.e("TIRAXREG", "RPLEN" + (mode.pulseLength / 10));
-            Log.e("TIRAXREG", "RTYP1" + (int) getType1(mode.continuePulse, mode.autoPedal));
+            Log.e("TIRAXREG", "RTYP1" + (int) getType1(mode.isPulse, mode.autoPedal));
             Log.e("TIRAXREG", "RTYP0" + (int)getType0((char) mode.type.getValue()));
         }
     }
@@ -44,6 +48,7 @@ public class Compiler {
         return type1;
 
     }
+
 
 
     public static void setRTYPRegister(Mode mode) {

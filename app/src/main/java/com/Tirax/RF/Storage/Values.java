@@ -16,7 +16,7 @@ public class Values {
     public static int time=45;
     public static Types type = Types.HF;
     public static boolean autoPedal;
-    public static boolean continuePulse;
+    public static boolean isPulse;
     public static int vacuumLevel=0;
     public static int weight=0;
     public static int height=0;

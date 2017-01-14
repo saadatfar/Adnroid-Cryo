@@ -205,13 +205,13 @@ public class ContinuePulseActivity extends MyActivity implements OnClickListener
 
 				Values.pulseLength = this.timeValue;
 				Values.pulseFrq = this.freqValue;
-				Values.continuePulse =true;
+				Values.isPulse =true;
 				startActivity(int_next);
 			}
 		}
 
 		if (arg0.getId()==R.id.btn_cont){
-			Values.continuePulse = false;
+			Values.isPulse = false;
 			startActivity(int_next);
 		}
 

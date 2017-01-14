@@ -12,11 +12,13 @@ public class AutoLipolysisWomanBodySecondOption extends Mode {
 
     public AutoLipolysisWomanBodySecondOption(){
         super();
-        power=100;
-        frequency = 400;
+        power=50;
+        frequency = 500;
         type = Types.LF;
         monobi ="Monopolar";
+        time =20;
         handpieceImg  = R.drawable.monohandler;
+        isPulse = false;
 
     }
 }

@@ -56,6 +56,8 @@ public class StopActivity extends MyActivity implements OnClickListener {
 	public int powerValue;
 	public int vacuumValue;
 
+	private Mode op;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -96,7 +98,7 @@ public class StopActivity extends MyActivity implements OnClickListener {
 		timetext = (TextView) findViewById(R.id.txt_time_stop);
 		vacuum = (TextView) findViewById(R.id.txt_stop_vacuum);
 
-		Mode op = Manager.getType();
+		op = Manager.getType();
 
 		TextView frequece = (TextView) findViewById(R.id.txt_stop_freq);
 		frequece.setText(op.frequency + "KHz");
@@ -228,7 +230,7 @@ public class StopActivity extends MyActivity implements OnClickListener {
 	}
 
 	private void showSummary() {
-		SummaryDialog s = new SummaryDialog(this,Manager.getType());
+		SummaryDialog s = new SummaryDialog(this,op);
 		s.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 		s.show();
 	}
@@ -296,11 +298,14 @@ public class StopActivity extends MyActivity implements OnClickListener {
 
 	public void powerDecrement(){
 		powerValue-=powerStep;
-		if(powerValue <0)
-			powerValue =0;
-		power.setText("" + powerValue+"%");
+		if(powerValue <10)
+			powerValue += powerStep;
+		power.setText("" + powerValue + "%");
 
-		DataProvider.setRegister(DataProvider.RPWR, (char) powerValue);
+		if(op.type ==  Types.LF && op.monobi.equals("BLF"))
+			DataProvider.setRegister(DataProvider.RPWR, (char) (powerValue*0.4));
+		else
+			DataProvider.setRegister(DataProvider.RPWR, (char) powerValue);
 
 	}
 	public void powerIncrement(){
@@ -308,7 +313,11 @@ public class StopActivity extends MyActivity implements OnClickListener {
 		if(powerValue >100)
 			powerValue =100;
 		power.setText("" + powerValue + "%");
-		DataProvider.setRegister(DataProvider.RPWR, (char) powerValue);
+
+		if(op.type ==  Types.LF && op.monobi.equals("BLF"))
+			DataProvider.setRegister(DataProvider.RPWR, (char) (powerValue*0.4));
+		else
+			DataProvider.setRegister(DataProvider.RPWR, (char) powerValue);
 	}
 
 	private void finishFunction() {
@@ -359,7 +368,7 @@ public class StopActivity extends MyActivity implements OnClickListener {
     };
 
 	private void playEndMusic() {
-		if(!mute) {
+		if(!mute && !finished) {
 			for (int i = 0; i < 2; i++) {
 				HardwareControler.PWMPlay(2000);
 				android.os.SystemClock.sleep(1000);
@@ -437,7 +446,6 @@ public class StopActivity extends MyActivity implements OnClickListener {
 
 							stopButton.setBackgroundResource(R.drawable.stopbut);
 							pause = false;
-							Mode op = Manager.getType();
 							Compiler.setRTYPRegister(op);
 
 					}
