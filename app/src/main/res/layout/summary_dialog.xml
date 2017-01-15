@@ -50,20 +50,16 @@
         android:layout_height="60dp"
         android:id="@+id/img_summary_low"
         android:background="@drawable/socketde"
-        android:layout_marginRight="37dp"
-        android:layout_marginEnd="37dp"
         android:layout_below="@+id/img_summary_high"
-        android:layout_alignRight="@+id/view"
-        android:layout_alignEnd="@+id/view" />
+        android:layout_toRightOf="@+id/img_summary_handpiece" />
 
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/img_summary_plate"
         android:background="@drawable/socketde"
-        android:layout_alignBottom="@+id/img_summary_pulse"
-        android:layout_alignLeft="@+id/img_summary_low"
-        android:layout_alignStart="@+id/img_summary_low" />
+        android:layout_below="@+id/img_summary_low"
+        android:layout_toRightOf="@+id/img_summary_handpiece" />
 
 
 
@@ -81,7 +77,7 @@
         android:layout_height="50dp"
         android:id="@+id/imageView5"
         android:background="@drawable/powerc"
-        android:layout_alignTop="@+id/img_summary_low"
+        android:layout_alignTop="@+id/img_summary_high"
         android:layout_alignLeft="@+id/img_summary_freq"
         android:layout_alignStart="@+id/img_summary_freq" />
 
@@ -90,7 +86,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/img_summary_freq"
         android:background="@drawable/startc"
-        android:layout_alignBottom="@+id/img_summary_high"
+        android:layout_alignBottom="@+id/img_summary_cav"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
 
@@ -139,9 +135,9 @@
         android:textColor="#ac0018"
         android:textSize="19dp"
         android:textStyle="bold"
-        android:layout_below="@+id/img_summary_low"
-        android:layout_toRightOf="@+id/imageView7"
-        android:layout_toEndOf="@+id/imageView7" />
+        android:layout_below="@+id/img_summary_high"
+        android:layout_alignLeft="@+id/txt_summery_power"
+        android:layout_alignStart="@+id/txt_summery_power" />
 
     <ImageView
         android:layout_width="50dp"
@@ -202,19 +198,18 @@
         android:layout_height="60dp"
         android:id="@+id/img_summary_cav"
         android:background="@drawable/socketde"
-        android:layout_below="@+id/img_summary_pulse"
-        android:layout_alignLeft="@+id/img_summary_plate"
-        android:layout_alignStart="@+id/img_summary_plate" />
+        android:layout_below="@+id/txt_summery_monobi"
+        android:layout_alignLeft="@+id/img_summary_high"
+        android:layout_alignStart="@+id/img_summary_high" />
 
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/img_summary_high"
         android:background="@drawable/socketde"
-        android:layout_below="@+id/view"
-        android:layout_alignLeft="@+id/img_summary_low"
-        android:layout_alignStart="@+id/img_summary_low"
-        android:layout_marginTop="10dp" />
+        android:layout_below="@+id/img_summary_cav"
+        android:layout_toRightOf="@+id/img_summary_handpiece"
+        android:layout_toEndOf="@+id/img_summary_handpiece" />
 
 
 </RelativeLayout>
