@@ -87,7 +87,7 @@ public class MainActivity  extends Activity    implements OnClickListener{
 
 		if(DataProvider.isDeviceOn()) {
 
-				StopActivity.time = SharedPrefrences.getTime();
+				//StopActivity.time = SharedPrefrences.getTime();
 				Intent int_auto = new Intent(MainActivity.this, StopActivity.class);
 				startActivity(int_auto);
 		}

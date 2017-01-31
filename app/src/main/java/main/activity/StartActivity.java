@@ -40,7 +40,7 @@ import com.example.cryo.*;
 		Mode op = Manager.getType();
 		TextView time_text = (TextView) findViewById(R.id.txt_time_start);
 		time_text.setText(op.time + "'");
-		StopActivity.time = op.time;
+
 		TextView power_text = (TextView) findViewById(R.id.txt_power_start);
 		power_text.setText(op.power + "%");
 		TextView frequency = (TextView) findViewById(R.id.txt_start_freq);

@@ -32,7 +32,7 @@ public class StopActivity extends MyActivity implements OnClickListener {
 	private Handler UIHandler = new Handler();
 	public boolean firstUI=false;
 	
-	public static int time=10;
+	public  int time=10;
 	public static int firstTime;
 
 	private TextView power;
@@ -117,7 +117,7 @@ public class StopActivity extends MyActivity implements OnClickListener {
 		{
 			findViewById(R.id.img_freq_hider).setVisibility(View.VISIBLE);
 		}
-
+		time = op.time;
 
 
 	}
@@ -352,12 +352,12 @@ public class StopActivity extends MyActivity implements OnClickListener {
         @Override
         public void run() {
 
-        	if(time==0){
+        	if(time==0 && !finished){
 				playEndMusic();
         		finishFunction();
         		return;
         	}
-			SharedPrefrences.setTime(StopActivity.time);
+			SharedPrefrences.setTime(time);
 			timetext = (TextView) findViewById(R.id.txt_time_stop);
         	timetext.setText(time+"'");
 			if(!pause)
