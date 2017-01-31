@@ -48,7 +48,7 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/img_summary_cav"
+        android:id="@+id/img_summary_plate"
         android:background="@drawable/socketde"
         android:layout_below="@+id/img_summary_low"
         android:layout_toRightOf="@+id/img_summary_handpiece" />
@@ -56,9 +56,9 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/img_summary_plate"
+        android:id="@+id/img_summary_cav"
         android:background="@drawable/socketde"
-        android:layout_below="@+id/img_summary_cav"
+        android:layout_below="@+id/img_summary_plate"
         android:layout_toRightOf="@+id/img_summary_handpiece" />
 
 
@@ -69,7 +69,7 @@
         android:id="@+id/summery_continue"
         android:background="@drawable/continuebut"
         android:layout_marginLeft="220dp"
-        android:layout_below="@+id/img_summary_plate" />
+        android:layout_below="@+id/img_summary_cav" />
 
     <ImageView
         android:layout_width="50dp"
